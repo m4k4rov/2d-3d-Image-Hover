@@ -1,44 +1,117 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    background: #262e31;
-    padding: 65px 0;
-}
-h1 {
-    margin-bottom: 65px;
-    text-align: center;
-    color: rgba(235, 236, 236, 0.671);
-}
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items:  center;
-}
-.imgBx {
-    margin: 30px 65px;
-    position: relative;
-    width: 300px;
-    height: 300px;
-    transform-style: preserve-3d; /*дочерние элементы будут отображаться в 3D-пространстве.*/
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
-.imgBx img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 5px;
-    transition: 0.5s;
-    z-index: calc(1 + var(--i));
-    opacity: calc(1 - (0.2 * var(--j)));
+* 
+{
+  margin: 0;
+  padding: 0;
+  font-family: 'Comfortaa', sans-serif;
 }
-.imgBx:hover img {
-    transform:  scale(0.8) rotate(-30deg) skew(25deg) translateX(calc(35px * var(--i))) translateY(calc(-35px * var(--i)));
-    box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.25);
+body
+{
+  
+  background-color: #222;
+}
+.container
+{ 
+  margin: 30px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.container .card 
+{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 15px;
+  overflow: hidden;
+  border-radius: 7px;
+  border: 1px solid rgba(240, 248, 255, 0.63);
+  box-shadow: -20px 20px 50px rgba(8, 8, 8, 0.801);
+}
+.container .card .imgBx,
+.container .card .contentBx
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .card .imgBx img 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card .contentBx::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.712);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+.container .card:hover .contentBx::before
+{
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  transition-delay: 0s;
+}
+.container .card .contentBx
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .card .contentBx .content
+{
+  position: relative;
+  padding: 30px;
+  z-index: 1;
+  transition: 0.5s;
+  transform: translateX(-300px);
+  transition-delay: 0s;
+}
+.container .card:hover .contentBx .content
+{
+  transform: translateX(0px);
+  transition-delay: 0.5s;
+}
+.container .card .contentBx .content h3
+{
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.container .card .contentBx .content p
+{
+  font-size: 1em;
+  line-height: 1.4em;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+.container .card .contentBx .content a
+{
+  cursor: pointer;
+  text-decoration: none;
+  color: #222;
+  padding: 15px 25px;
+  background-color: rgba(126, 128, 128, 0.308);
+  float: right;
+  border-radius: 5px;
 }
