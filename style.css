@@ -20,6 +20,7 @@ body
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  gap: 30px;
 }
 .container .card 
 {
