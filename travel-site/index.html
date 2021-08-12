@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Путешествуй с нами</title>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Travel</a>
+    <div class="group">
+      <ul class="navigation">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Туризм</a></li>
+        <li><a href="#">О компании</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li class="close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close Circle</title><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M320 320L192 192M192 320l128-128"/></svg>
+        </li>
+      </ul>
+      <ul class="action">
+        <li><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+        </a></li>
+        <li><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
+        </a></li>
+        <li class="navMenu"><a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="banner">
+    <div class="bg">
+      <img src="./bg.jpg" class="cover">
+      <div class="content">
+        <h2>Исследуй мир</h2>
+        <a href="#" class="btn">Забронировать</a>
+      </div>
+    </div>
+    <form class="searchBox">
+      <div class="inputBx">
+        <p>Выберите место</p>
+          <input type="text" placeholder="Мальдивы?" required>
+      </div>
+      <div class="inputBx">
+        <p>Дата заезда</p>
+          <input type="date">
+      </div>
+      <div class="inputBx">
+        <p>Дата выезда</p>
+          <input type="date">
+      </div>
+      <div class="inputBx">
+        <p class="white">_</p>
+          <input type="submit" value="Подобрать">
+      </div>
+    </form>
+  </div>
+  <script>
+    const navMenu = document.querySelector('.navMenu'),
+          navigation = document.querySelector('.navigation'),
+          close = document.querySelector('.close');
+    navMenu.addEventListener('click', () => navigation.classList.add('visibility'));
+    close.addEventListener('click', () => navigation.classList.remove('visibility'));
+  </script>
+</body>
+</html>
