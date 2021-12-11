@@ -10,8 +10,8 @@ function parallax(e) {
 window.addEventListener('deviceorientation', function(e) {
   document.querySelectorAll('.layer').forEach(layer => {
     const speed = layer.dataset.speed;
-    const x = (window.innerWidth - e.beta*speed)/100; //шИрина окна - координата по х относительно элемента * speed
-    const y = (window.innerHeight - e.gamma*speed)/100;
+    const x = (window.innerWidth - e.gamma*speed)/10; //шИрина окна - координата по х относительно элемента * speed
+    const y = (window.innerHeight - e.beta*speed)/10;
     layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
   })
 });
