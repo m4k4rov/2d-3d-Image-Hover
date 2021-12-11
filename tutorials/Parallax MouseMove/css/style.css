@@ -40,3 +40,9 @@ section h2 {
   color: #fff;
   font-size: 12em;
 }
+
+@media (max-width: 555px) {
+  section h2 {
+    font-size: 5em;
+  }
+}
