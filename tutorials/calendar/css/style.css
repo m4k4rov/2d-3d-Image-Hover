@@ -36,12 +36,6 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-.calendar table td.thisDay {
-  background: #fb7287;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 4px;
-  color: #fff;
-}
 .calendar {
   padding: 20px 40px;
 }
@@ -97,6 +91,12 @@ table.month td.day .day-content:hover {
 }
 .calendar .calendar-header .year-neighbor2 {
   font-size: 30px;
+}
+.calendar  table.month tr td.thisDay {
+  background: #fb7287;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  color: #fff;
 }
 .drag {
   width: 100%;
