@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Vox Round Regular';
+  src: url('../fonts/VoxRound.eot');
+  src: url('../fonts/VoxRound.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/VoxRound.woff') format('woff'),
+  url('../fonts/VoxRound.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Windy Rain Regular';
+  src: url('../fonts/WindyRain.eot');
+  src: url('../fonts/WindyRain.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/WindyRain.woff') format('woff'),
+  url('../fonts/WindyRain.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Vox Round Regular';
+  background: #EEF2FF;
+  position: relative;
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.calendar table td.thisDay {
+  background: #fb7287;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  color: #fff;
+}
+.calendar {
+  padding: 20px 40px;
+}
+.months-container {
+  justify-content: center;
+  gap: 40px;
+}
+.calendar .months-container .month-container {
+  background: #fff;
+  padding: 20px;
+  min-width: 280px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+}
+.calendar table.month th.month-title {
+  color: #676FA3;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: 'Windy Rain Regular', cursive;
+}
+.calendar table.month tr td:nth-last-child(1), .calendar table.month tr td:nth-last-child(2), .calendar table.month tr:nth-child(2) th:nth-last-child(1),.calendar table.month tr th:nth-last-child(2)  {
+  color: #f00;
+}
+.calendar table.month td.day .day-content {
+  padding: 6px 8px;
+}
+.calendar table.month th.day-header {
+  color: #777;
+  font-size: 15px;
+  font-weight: 700;
+}
+.month tr td {
+  font-size: 15px;
+  font-weight: 500;
+  color: #676FA3;
+}
+table.month td.day .day-content:hover {
+  background: #f75c90;
+  color: #fff;
+}
+.calendar .calendar-header {
+  border: none;
+}
+.calendar .calendar-header table th:hover {
+  background: transparent;
+}
+.calendar .calendar-header .year-title {
+  font-size: 60px;
+  font-family: 'Windy Rain Regular', cursive;
+  color: #FF5959;
+}
+.calendar .calendar-header .year-neighbor {
+  font-size: 40px;
+}
+.calendar .calendar-header .year-neighbor2 {
+  font-size: 30px;
+}
+.drag {
+  width: 100%;
+  height: 25px;
+  background: transparent;
+  -webkit-app-region: drag;
+  position: sticky;
+  top: 0;
+}
+.event-tooltip-content {
+  padding: 5px;
+}
+
+.event-tooltip-content:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
