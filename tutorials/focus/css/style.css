@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.focus-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  --x: 300px;
+  --y: 300px;
+}
+
+.focus-box-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../img/coffee-7121939_1280.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.focus-box-item:nth-child(1) {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+.focus-box-item:nth-child(2) {
+  -webkit-clip-path: circle(150px at var(--x) var(--y));
+          clip-path: circle(150px at var(--x) var(--y));
+}
+
+.focus-box-item h2 {
+  color: #fff;
+  font-size: 300px;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transform: translate(calc( var(--x) / 25), calc( var(--y) / 25));
+          transform: translate(calc( var(--x) / 25), calc( var(--y) / 25));
+}
+
+.focus-box-circle {
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(var(--x), var(--y));
+          transform: translate(var(--x), var(--y));
+  pointer-events: none;
+}
+
+@media (max-width: 555px) {
+  .focus-box-item h2 {
+    font-size: 100px;
+  }
+}
