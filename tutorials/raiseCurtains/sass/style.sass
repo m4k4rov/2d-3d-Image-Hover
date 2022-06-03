@@ -1,0 +1,69 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.curtain
+  --color1: white
+  --color2: black
+  position: relative
+  &::after
+    content: ''
+    display: block
+    min-height: 100vh
+    background: var(--color1)
+  &::before
+    content: ''
+    min-height: 100vh
+    width: 100%
+    display: block
+    background: var(--color2)
+    position: absolute
+    top: 0
+
+.invert
+  position: sticky
+  top: 20px
+
+  mix-blend-mode: difference
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  gap: 15px
+
+  min-height: 100vh
+  padding: 0px 5vw
+  text-align: center
+
+h2, h1
+  color: var(--color1)
+.one, .two
+  min-height: 100vh
+  background: #222
+  display: flex
+  align-items: center
+  justify-content: center
+  &::before, &::after
+    content: ''
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    border: 4px solid #fff
+    position: absolute
+    display: block
+    animation: circle .9s linear infinite
+  &::after
+    animation-delay: 0.45s
+  svg
+    color: #fff
+    width: 70px
+    position: relative
+@keyframes circle
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+    width: 100px
+    height: 100px
